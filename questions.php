@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+
     <!-- custom csss styling file  -->
     <link rel="stylesheet" href="resources/css/style.css">
 
@@ -19,58 +20,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <!--***** font-family: 'Libre Baskerville', serif; ******* -->
 
-
-    <title>ASN Discussion</title>
+    <title>Questions</title>
 </head>
 
 <body>
-    <!-- header of the web page ---------------------- -->
-    <header>
-        <?php
-      require 'components/navbar.php';
-      ?>
-        <div class="hero-text-box">
-            <h2>Website Security Discussion</h2>
-            <h3>How to secure Your Website</h3>
-            <br>
-            <a href="#" class="header-btn">
-                <h4>Login</h4>
-            </a>
-            <a href="#" class="header-btn">
-                <h4>Singup</h4>
-            </a>
-        </div>
-    </header>
+    <!-- navbar  -->
+    <?php 
+    require 'components/navbar.php';
+    ?>
 
-    <!-- Section Topics ----------***************--------- -->
-    <section class="topics-section">
+    <!-- section Question ----------------- -->
+    <section class="question-section">
         <div class="container">
-            <div class="heading">
-                <h1>Topics For Discussion</h1>
+            <div class="Topic">
+                <h1>Andriod Securitry System</h1>
             </div>
-            <div class="row">
-
-                <div class="card-padding col-md-4 my-2">
-                    <div class="card card-custom" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Andriod Security</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">How i can Secure my Andriod Phone.</p>
-                            <a href="questions.php" class="card-btn">Card link</a>
-                            <a href="#" class="card-btn">Another link</a>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="">Reply</a>
+                <hr>
             </div>
 
         </div>
-    </section>
 
-    <!-- ------ Footer part --------------------------  -->
-    <?php
+    </section>
+    <!-- footer  -->
+
+    <?php 
     require 'components/footer.php';
     ?>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

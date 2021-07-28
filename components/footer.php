@@ -1,7 +1,7 @@
 <footer>
     <div class="container">
         <div class="footer-styling">
-            <h1>ASN Discussion</h1>
+            <h6>ASN Discussion</h6>
             <ul class="footer-nav">
                 <li><a href="#" target="_blank">About Me</a></li>
                 <li><a href="#" target="_blank">LinkedIn</a></li>
