@@ -1,3 +1,15 @@
+<?php 
+
+session_start();
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
+    $loggedin = false;
+}
+else{
+    $loggedin = true;
+}
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -36,7 +48,7 @@
             <a href="#" class="header-btn">
                 <h4>Login</h4>
             </a>
-            <a href="#" class="header-btn">
+            <a href="singuppage.php" class="header-btn">
                 <h4>Singup</h4>
             </a>
         </div>
