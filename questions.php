@@ -35,12 +35,122 @@
             <div class="Topic">
                 <h1>Andriod Securitry System</h1>
             </div>
+
+            <!-- form ----------------------- -->
+
+            <div class="forms">
+                <form>
+                    <div class="mb-3">
+                        <label for="question" class="form-label">Ask a Question related to the Topic</label>
+                        <textarea name="reply" id="reply" class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <!-- Questions List -->
+
             <div class="Q-heading">
                 <h5>How i can Secure My Andriod Phone</h5>
                 <small>Asked By: Ahsan</small>
                 <a href="replies.php">Reply</a>
                 <hr>
             </div>
+
+            <!-- -------------------------------------------  -->
+
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+            <div class="Q-heading">
+                <h5>How i can Secure My Andriod Phone</h5>
+                <small>Asked By: Ahsan</small>
+                <a href="replies.php">Reply</a>
+                <hr>
+            </div>
+
+            <!-- ---------------------------------------------------- -->
 
         </div>
 

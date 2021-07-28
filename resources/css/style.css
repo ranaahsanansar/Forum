@@ -96,6 +96,10 @@ header {
     border-radius: 20px;
 }
 
+form {
+    margin-bottom: 50px;
+}
+
 
 /* Page Question Secion -------------------------- */
 
@@ -129,11 +133,15 @@ margin: 30px;
     color: green;
 }
 
-/* Replies Page Css ++++++---------------------------  */
+/* Replies Page Css ---------------------------------------  */
 
 .Question {
     margin-top: 30px;
 color: rgba(13, 98, 94, 0.685);
+}
+
+.reply-card  {
+    margin-bottom: 5px;
 }
 
 

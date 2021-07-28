@@ -32,13 +32,128 @@
     <!-- section Question ----------------- -->
     <section class="replies-section">
         <div class="container">
+
             <div class="Question">
                 <h5>Here is Question Heading</h5>
                 <small>Asked By: Ahsan</small>
                 <hr>
             </div>
-            
 
+            <!-- ------------Form -------------  -->
+
+            <div class="forms">
+                <form>
+                    <div class="mb-3">
+                        <label for="reply" class="form-label">Reply To This Question</label>
+                        <textarea name="reply" id="reply" class="form-control" ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <!-- -----replies -------------- -->
+
+            <div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div>
+<!-- ------------------------------------------------------------- -->
+
+<div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div><div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div><div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div><div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div><div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div><div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div><div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div><div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div><div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div><div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div><div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div><div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div><div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div><div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div><div class="card reply-card">
+                <div class="card-body">
+                    <strong style="font-size: small;">User ID:</strong> Ahsan 
+                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
+                    <p style=" float: right; ">Time: 70:90:86</p>
+                </div>
+            </div>
+<!-- ---------------------------------------------------------------------- -->
         </div>
 
     </section>
