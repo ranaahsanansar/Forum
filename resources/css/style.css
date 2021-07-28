@@ -129,6 +129,14 @@ margin: 30px;
     color: green;
 }
 
+/* Replies Page Css ++++++---------------------------  */
+
+.Question {
+    margin-top: 30px;
+color: rgba(13, 98, 94, 0.685);
+}
+
+
 /* --------------Footer Part ----------------------------  */
 
 footer {

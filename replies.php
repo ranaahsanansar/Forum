@@ -30,17 +30,14 @@
     ?>
 
     <!-- section Question ----------------- -->
-    <section class="question-section">
+    <section class="replies-section">
         <div class="container">
-            <div class="Topic">
-                <h1>Andriod Securitry System</h1>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
+            <div class="Question">
+                <h5>Here is Question Heading</h5>
                 <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
                 <hr>
             </div>
+            
 
         </div>
 
