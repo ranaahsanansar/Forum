@@ -29,34 +29,60 @@
         <?php
       require 'components/navbar.php';
       ?>
-      <div class="hero-text-box">
-        <h2>Website Security Discussion</h2>
-        <h3>How to secure Your Website</h3>
-        <br>
-        <a href="#" class="header-btn"><h4>Login</h4></a>
-        <a href="#" class="header-btn"><h4>Singup</h4></a>
-      </div>
+        <div class="hero-text-box">
+            <h2>Website Security Discussion</h2>
+            <h3>How to secure Your Website</h3>
+            <br>
+            <a href="#" class="header-btn">
+                <h4>Login</h4>
+            </a>
+            <a href="#" class="header-btn">
+                <h4>Singup</h4>
+            </a>
+        </div>
     </header>
 
     <!-- Section Topics ----------***************--------- -->
     <section class="topics-section">
-      <div class="container">
-        <div class="heading">
-          <h1>Topics For Discussion</h1>
-        </div>
-        <div class="card-custom">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Andriod Security</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">How i can Secure my Andriod Phone.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+        <div class="container">
+            <div class="heading">
+                <h1>Topics For Discussion</h1>
             </div>
-          </div>
+            <div class="row">
+
+                <div class="card-padding col-md-4 my-2">
+                    <div class="card card-custom" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Andriod Security</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">How i can Secure my Andriod Phone.</p>
+                            <a href="#" class="card-btn">Card link</a>
+                            <a href="#" class="card-btn">Another link</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ------ Footer part --------------------------  -->
+
+    <footer> 
+      <div class="container">
+        <div class="footer-styling">
+          <h1>ASN Discussion</h1>
+          <ul class="footer-nav">
+            <li><a href="#" target="_blank">About Me</a></li>
+            <li><a href="#" target="_blank">LinkedIn</a></li>
+            <li><a href="#" target="_blank">GitHub</a></li>
+            <li><a href="#" target="_blank">Instagram</a></li>
+          </ul>
+          <div class="row"><p class="copyrights">Copy right &copy;By Rana Ahsan Ansar. All rights reserved.</p></div>
         </div>
       </div>
-    </section>
+    </footer>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
