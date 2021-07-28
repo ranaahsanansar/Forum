@@ -1,0 +1,15 @@
+/*--------------------------------------- nav bar ------------------------------- */
+
+.custom-color {
+    background-color: rgba(9, 80, 121, 0.685);
+}
+
+/* ----------------------------- header setting and styling -------------------------------- */
+
+header {
+    background-image: linear-gradient(rgba(13, 98, 94, 0.685) , rgba(27, 35, 107, 0.472) ) , url(img/bg-img.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
