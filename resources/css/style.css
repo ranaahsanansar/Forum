@@ -1,3 +1,22 @@
+/* Basic Settigs ------------------ */
+
+ h1 {
+    color: blanchedalmond;
+    font-family: 'Libre Baskerville', serif;
+}
+ h2 {
+    color: blanchedalmond;
+    font-family: 'Libre Baskerville', serif;
+}
+ h3 {
+    color: blanchedalmond;
+    font-family: 'Libre Baskerville', serif;
+}
+ h4 {
+    color: blanchedalmond;
+    font-family: 'Libre Baskerville', serif;
+}
+
 /*--------------------------------------- nav bar ------------------------------- */
 
 .custom-color {
@@ -12,4 +31,43 @@ header {
     background-position: center;
     height: 100vh;
     background-attachment: fixed;
+}
+.hero-text-box {
+    position: absolute;
+    width: 500px;
+    left: 30%;
+    top: 50%; 
+    transform: translate(-50%,-50%);
+}
+.header-btn {
+    border-radius: 50px;
+    background-color: rgba(9, 80, 121, 0.685) ;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 2px solid rgba(251, 251, 251, 0);
+}
+.header-btn:hover,
+.header-btn:active {
+    border: 2px solid rgb(187, 184, 214);
+    background-color: black;
+}
+/* section2 Card and Topic for Disccusions -------*------***-**- */
+
+.heading {
+    padding-top: 80px;
+    margin-bottom: 40px;
+}
+
+.topics-section {
+    background-color: rgba(170, 167, 167, 0.452);
+}
+.heading h1 {
+    color: rgba(9, 80, 121, 0.959);
+    text-align: center;
+    border-bottom: rgba(255, 0, 0, 0);
+}
+.card-custom {
+    padding-bottom: 50px;
 }
