@@ -70,159 +70,39 @@ else{
     <section class="topics-section">
         <div class="container">
             <div class="heading">
-                <h1>Topics For Discussion</h1>
+                <h1>Topics/Category For Discussion</h1>
+                <br>
+                <h5 style="text-align: center;">Only Admin Can Add a new Topic Or Category</h5>
             </div>
             <div class="row">
 
+                <!-- ferching Dynamic Topics forms DataBase  -->
 
+                <!-- INSERT INTO `categories` (`cate_id`, `name`, `details`) VALUES (NULL, 'Android Security', 'How to Secure Your Andriod Phone From Hackers.'); -->
+                <?php 
+                    require 'components/__dbconnect.php';
 
-                <div class="card-padding col-md-4 my-2">
-                    <div class="card card-custom" style="width: 18rem;">
+                    $sql = 'SELECT * FROM `categories`';
+                    $result = mysqli_query($conn , $sql);
+
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo '
+                            <div class="card-padding col-md-4 my-2">
+                            <div class="card card-custom" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title">Andriod Security</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">How i can Secure my Andriod Phone.</p>
-                            <a href="questions.php" class="card-btn">View</a>
+                            <h5 class="card-title">'. substr($row['title'], 0 , 15) .'</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">ASN Discussion Forum</h6>
+                            <p class="card-text">'. substr($row['details'] , 0 , 15) .'.......</p>
+                            <a href="questions.php?cate_id='.$row['cate_id'].'" class="card-btn">View</a>
                             <!-- <a href="#" class="card-btn">Another link</a> -->
                         </div>
-                    </div>
-                </div>
+                            </div>
+                                </div>
+                        ';
+                    }
 
 
-                <!-- ---------------------------------------------  -->
-
-                <div class="card-padding col-md-4 my-2">
-                    <div class="card card-custom" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Andriod Security</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">How i can Secure my Andriod Phone.</p>
-                            <a href="questions.php" class="card-btn">Card link</a>
-                            <a href="#" class="card-btn">Another link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-padding col-md-4 my-2">
-                    <div class="card card-custom" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Andriod Security</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">How i can Secure my Andriod Phone.</p>
-                            <a href="questions.php" class="card-btn">Card link</a>
-                            <a href="#" class="card-btn">Another link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-padding col-md-4 my-2">
-                    <div class="card card-custom" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Andriod Security</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">How i can Secure my Andriod Phone.</p>
-                            <a href="questions.php" class="card-btn">Card link</a>
-                            <a href="#" class="card-btn">Another link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-padding col-md-4 my-2">
-                    <div class="card card-custom" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Andriod Security</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">How i can Secure my Andriod Phone.</p>
-                            <a href="questions.php" class="card-btn">Card link</a>
-                            <a href="#" class="card-btn">Another link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-padding col-md-4 my-2">
-                    <div class="card card-custom" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Andriod Security</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">How i can Secure my Andriod Phone.</p>
-                            <a href="questions.php" class="card-btn">Card link</a>
-                            <a href="#" class="card-btn">Another link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-padding col-md-4 my-2">
-                    <div class="card card-custom" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Andriod Security</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">How i can Secure my Andriod Phone.</p>
-                            <a href="questions.php" class="card-btn">Card link</a>
-                            <a href="#" class="card-btn">Another link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-padding col-md-4 my-2">
-                    <div class="card card-custom" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Andriod Security</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">How i can Secure my Andriod Phone.</p>
-                            <a href="questions.php" class="card-btn">Card link</a>
-                            <a href="#" class="card-btn">Another link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-padding col-md-4 my-2">
-                    <div class="card card-custom" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Andriod Security</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">How i can Secure my Andriod Phone.</p>
-                            <a href="questions.php" class="card-btn">Card link</a>
-                            <a href="#" class="card-btn">Another link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-padding col-md-4 my-2">
-                    <div class="card card-custom" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Andriod Security</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">How i can Secure my Andriod Phone.</p>
-                            <a href="questions.php" class="card-btn">Card link</a>
-                            <a href="#" class="card-btn">Another link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-padding col-md-4 my-2">
-                    <div class="card card-custom" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Andriod Security</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">How i can Secure my Andriod Phone.</p>
-                            <a href="questions.php" class="card-btn">Card link</a>
-                            <a href="#" class="card-btn">Another link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-padding col-md-4 my-2">
-                    <div class="card card-custom" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Andriod Security</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">How i can Secure my Andriod Phone.</p>
-                            <a href="questions.php" class="card-btn">Card link</a>
-                            <a href="#" class="card-btn">Another link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-padding col-md-4 my-2">
-                    <div class="card card-custom" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Andriod Security</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">How i can Secure my Andriod Phone.</p>
-                            <a href="questions.php" class="card-btn">Card link</a>
-                            <a href="#" class="card-btn">Another link</a>
-                        </div>
-                    </div>
-                </div>
+                ?>
 
                 <!-- ----------------------------------------------------  -->
 
