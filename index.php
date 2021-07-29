@@ -1,12 +1,14 @@
 <?php 
 
 session_start();
+$userName = null;
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
     $loggedin = false;
 }
 else{
     $loggedin = true;
+    $userName = $_SESSION['userName'];
 }
 
 ?>
@@ -45,12 +47,22 @@ else{
             <h2>Website Security Discussion</h2>
             <h3>How to secure Your Website</h3>
             <br>
-            <a href="#" class="header-btn">
-                <h4>Login</h4>
-            </a>
-            <a href="singuppage.php" class="header-btn">
-                <h4>Singup</h4>
-            </a>
+            <!-- if session in Login then disply the name of User  -->
+            <?php
+                if ($loggedin != true){
+                    echo '
+                    <a href="#" class="header-btn">
+                        <h4>Login</h4>
+                    </a>
+                    <a href="singuppage.php" class="header-btn">
+                        <h4>Singup</h4>
+                    </a>
+                    ';
+                }else{
+                    echo '<h3>Welcome '.$userName .' ! </h3>'   ;
+                }
+            ?>
+
         </div>
     </header>
 
@@ -62,7 +74,7 @@ else{
             </div>
             <div class="row">
 
-                
+
 
                 <div class="card-padding col-md-4 my-2">
                     <div class="card card-custom" style="width: 18rem;">
@@ -89,7 +101,8 @@ else{
                             <a href="#" class="card-btn">Another link</a>
                         </div>
                     </div>
-                </div><div class="card-padding col-md-4 my-2">
+                </div>
+                <div class="card-padding col-md-4 my-2">
                     <div class="card card-custom" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Andriod Security</h5>
@@ -99,7 +112,8 @@ else{
                             <a href="#" class="card-btn">Another link</a>
                         </div>
                     </div>
-                </div><div class="card-padding col-md-4 my-2">
+                </div>
+                <div class="card-padding col-md-4 my-2">
                     <div class="card card-custom" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Andriod Security</h5>
@@ -109,7 +123,8 @@ else{
                             <a href="#" class="card-btn">Another link</a>
                         </div>
                     </div>
-                </div><div class="card-padding col-md-4 my-2">
+                </div>
+                <div class="card-padding col-md-4 my-2">
                     <div class="card card-custom" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Andriod Security</h5>
@@ -119,7 +134,8 @@ else{
                             <a href="#" class="card-btn">Another link</a>
                         </div>
                     </div>
-                </div><div class="card-padding col-md-4 my-2">
+                </div>
+                <div class="card-padding col-md-4 my-2">
                     <div class="card card-custom" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Andriod Security</h5>
@@ -129,7 +145,8 @@ else{
                             <a href="#" class="card-btn">Another link</a>
                         </div>
                     </div>
-                </div><div class="card-padding col-md-4 my-2">
+                </div>
+                <div class="card-padding col-md-4 my-2">
                     <div class="card card-custom" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Andriod Security</h5>
@@ -139,7 +156,8 @@ else{
                             <a href="#" class="card-btn">Another link</a>
                         </div>
                     </div>
-                </div><div class="card-padding col-md-4 my-2">
+                </div>
+                <div class="card-padding col-md-4 my-2">
                     <div class="card card-custom" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Andriod Security</h5>
@@ -149,7 +167,8 @@ else{
                             <a href="#" class="card-btn">Another link</a>
                         </div>
                     </div>
-                </div><div class="card-padding col-md-4 my-2">
+                </div>
+                <div class="card-padding col-md-4 my-2">
                     <div class="card card-custom" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Andriod Security</h5>
@@ -159,7 +178,8 @@ else{
                             <a href="#" class="card-btn">Another link</a>
                         </div>
                     </div>
-                </div><div class="card-padding col-md-4 my-2">
+                </div>
+                <div class="card-padding col-md-4 my-2">
                     <div class="card card-custom" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Andriod Security</h5>
@@ -169,7 +189,8 @@ else{
                             <a href="#" class="card-btn">Another link</a>
                         </div>
                     </div>
-                </div><div class="card-padding col-md-4 my-2">
+                </div>
+                <div class="card-padding col-md-4 my-2">
                     <div class="card card-custom" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Andriod Security</h5>
@@ -179,7 +200,8 @@ else{
                             <a href="#" class="card-btn">Another link</a>
                         </div>
                     </div>
-                </div><div class="card-padding col-md-4 my-2">
+                </div>
+                <div class="card-padding col-md-4 my-2">
                     <div class="card card-custom" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Andriod Security</h5>
@@ -189,7 +211,8 @@ else{
                             <a href="#" class="card-btn">Another link</a>
                         </div>
                     </div>
-                </div><div class="card-padding col-md-4 my-2">
+                </div>
+                <div class="card-padding col-md-4 my-2">
                     <div class="card card-custom" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Andriod Security</h5>

@@ -1,3 +1,17 @@
+<?php 
+
+// session_start();
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
+  // echo "false";
+    $loggedin = false;
+}
+else{
+  // echo "true";
+    $loggedin = true;
+}
+?>
+
 <nav class="navbar navbar-expand-lg navbar-dark custom-color">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">ASN Discussion</a>
@@ -24,9 +38,17 @@
           </ul>
         </li>
         <!-- --------------------------------- login and Logout Button ------------------ -->
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
+        <?php 
+        
+        if($loggedin == true){
+          echo '
+           <li class="nav-item">
+            <a class="nav-link" href="logout.php">Logout</a>
+            </li>
+          ';
+        }
+        ?>
+        
       </ul>
     </div>
   </div>
