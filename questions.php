@@ -125,7 +125,10 @@ else{
             <!-- fetching Questions list form Database ---------- -->
             <?php
             // connection with database 
-                $sql = "SELECT * FROM `questions` Where `cate_id` = $category_id";
+                // $sql = "SELECT * FROM `questions` Where `cate_id` = $category_id ";
+                // fetching data in Dessending order 
+                $sql = "SELECT * FROM `questions` Where `cate_id` = $category_id ORDER BY ques_id DESC";
+
                 $result = mysqli_query($conn , $sql);
                 $numOfrows = mysqli_num_rows($result);
                 if ($numOfrows > 0){

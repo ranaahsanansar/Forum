@@ -130,7 +130,7 @@ else{
 
                 <?php
             // connection with database 
-                $sql = "SELECT * FROM `replies` Where `ques_id` = $question_id";
+                $sql = "SELECT * FROM `replies` Where `ques_id` = $question_id ORDER BY reply_id DESC";
                 $result = mysqli_query($conn , $sql);
                 $numOfrows = mysqli_num_rows($result);
                 if ($numOfrows > 0){
