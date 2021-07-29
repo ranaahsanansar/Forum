@@ -18,7 +18,7 @@ $result = mysqli_query($conn , $sql);
 $numOfRows = mysqli_num_rows($result);
 // if Number of row is equal to one then go back 
 if ($numOfRows == 1 || $numOfRows > 1){
-        while ($row = mysqli_fetch_assoc($result)) {
+        while ($row = mysqli_fetch_assoc($result)) { 
             session_start();
             $_SESSION['loggedin'] = true;
             $_SESSION['userName'] = $row['name'];

@@ -30,17 +30,16 @@ if (!$exits == false){
     $sql = "INSERT INTO `users` (`sr.`, `name`, `email`, `password`, `created_date`) VALUES (NULL, '$name', '$email', '$password_u', current_timestamp())";
 $result = mysqli_query($conn , $sql);
 
-if ($result){
     session_start();
     $_SESSION['loggedin'] = true;
     $_SESSION['userName'] = $name;
-    $_SESSION['useremail'] = $email;
-}
-else{
+    $_SESSION['userEmail'] = $email;
+
+
+}else{
     $_SESSION['loggedin'] = false;
     $_SESSION['userName'] = null;
     $_SESSION['userEmail'] = null ;
-}
 }
 
 

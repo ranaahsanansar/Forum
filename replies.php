@@ -140,7 +140,7 @@ else{
                     <div class="card-body">
                         <strong style="font-size: small;">User ID:</strong> '. $rows['author'].'
                         <p style="font-size: 15px; ">'. $rows['reply'] .'</p>
-                        <p style=" float: right; ">Time:' . $rows['time'] .'</p>
+                        <p style=" float: right; ">Time: ' . $rows['time'] .'</p>
                     </div>
                 </div>
                     ';
