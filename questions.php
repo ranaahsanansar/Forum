@@ -4,7 +4,12 @@ session_start();
 require 'components/__dbconnect.php';
 if (isset($_GET['cate_id'])){
     $category_id = $_GET['cate_id'];
+}else{
+    // if get methid is not set then Go Back to index page 
+    header('location: index.php');
+    exit();
 }
+
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
   // echo "false";
@@ -56,7 +61,7 @@ else{
 
 
             <?php 
-
+                    // fetching Title of Category from Database 
                     $sql = "SELECT * FROM `categories` Where `cate_id` = '$category_id'";
                     $result = mysqli_query($conn , $sql);
 
@@ -129,7 +134,7 @@ else{
                     <div class="Q-heading">
                         <h5>'.$rows['question'].'</h5>
                         <small>Asked By: '.$rows['author'].'</small>
-                        <a href="replies.php">Reply</a>
+                        <a href="replies.php?ques_id='. $rows['ques_id'] .'">Reply</a>
                         <hr>
                     </div>
                     ';

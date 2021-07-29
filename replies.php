@@ -1,6 +1,15 @@
 <?php 
 
 session_start();
+require 'components/__dbconnect.php';
+// if get method is sed 
+if (isset($_GET['ques_id'])){
+    $question_id = $_GET['ques_id'];
+}else{
+    header('location: index.php');
+    exit();
+}
+
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
   // echo "false";
@@ -48,12 +57,26 @@ else{
     <section class="replies-section">
         <div class="container">
 
-            <div class="Question">
-                <h5>Here is Question Heading</h5>
-                <small>Asked By: Ahsan</small>
+            <?php
+            $sql = "SELECT * FROM `questions` Where `ques_id` = $question_id ";
+            $result = mysqli_query($conn , $sql);
+            $numOfrows = mysqli_num_rows($result);
+            if ($numOfrows == 1 ){
+                while ($rows = mysqli_fetch_assoc($result)) {
+                echo '
+                <div class="Question">
+                    <h5>'. $rows['question'] .' </h5>
+                    <small>Asked By:'. $rows['author'].'</small>
                 <hr>
-            </div>
-
+                </div>
+                ';
+                }
+            }else{
+                header('location: questions.php');
+            }
+            
+            ?>
+            
             <!-- ------------Form -------------  -->
 
             <?php
@@ -61,7 +84,7 @@ else{
                     echo '
 
                     <div class="forms">
-                    <form>
+                    <form action="'.$_SERVER['REQUEST_URI'].'" method="POST">
                         <div class="mb-3">
                             <label for="reply" class="form-label">Reply To This Question</label>
                             <textarea name="reply" id="reply" class="form-control" ></textarea>
@@ -85,114 +108,58 @@ else{
                     <br>
                     ';
                 }
+                // inserting reply in Database 
+                // INSERT INTO `replies` (`reply_id`, `ques_id`, `reply`, `author`, `time`) VALUES (NULL, '103', 'this is good.', 'ahsan', current_timestamp())
+                if (isset($_POST['reply'])){
+                    $reply = $_POST['reply'];
+                    $author_email_reply = $_SESSION['userEmail'];
+                    // checking empty Reply 
+                    if ($reply != null){
+                        $sql = "INSERT INTO `replies` (`ques_id`, `reply`, `author`, `time`) VALUES ('$question_id', '$reply', '$author_email_reply', current_timestamp())";
+                        $result = mysqli_query($conn , $sql);
+                    }
+                    else{
+                        echo '<p style="color: red">Empty on Invalid Insertion</p><br><br>';
+                    }
+                    
+                }
+                
             ?>
-
-
-           
-
             <!-- -----replies -------------- -->
+                <!-- fetching replies from database  -->
 
-            <div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
+                <?php
+            // connection with database 
+                $sql = "SELECT * FROM `replies` Where `ques_id` = $question_id";
+                $result = mysqli_query($conn , $sql);
+                $numOfrows = mysqli_num_rows($result);
+                if ($numOfrows > 0){
+                    while ($rows = mysqli_fetch_assoc($result)) {
+                    echo '
+                    <div class="card reply-card">
+                    <div class="card-body">
+                        <strong style="font-size: small;">User ID:</strong> '. $rows['author'].'
+                        <p style="font-size: 15px; ">'. $rows['reply'] .'</p>
+                        <p style=" float: right; ">Time:' . $rows['time'] .'</p>
+                    </div>
                 </div>
-            </div>
-<!-- ------------------------------------------------------------- -->
-
-<div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div><div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div><div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div><div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div><div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div><div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div><div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div><div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div><div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div><div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div><div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div><div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div><div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div><div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div><div class="card reply-card">
-                <div class="card-body">
-                    <strong style="font-size: small;">User ID:</strong> Ahsan 
-                    <p style="font-size: 15px; " >How to Install Anti Virus</p>
-                    <p style=" float: right; ">Time: 70:90:86</p>
-                </div>
-            </div>
-<!-- ---------------------------------------------------------------------- -->
+                    ';
+                    // extra spacing if there is only one Question 
+                    if ($numOfrows < 2){
+                        echo '<br><br><br><br>';
+                    }
+                    }
+                }else{
+                    echo '
+                    <div style="margin-bottom: 300px;">
+                        <h1 style="color: red">Empty!</h1>
+                        <h5 style="color: black">Be the First to Post a Reply</h5>
+                    </div>
+                    ';
+                }
+                
+            ?>
+            <!-- ---------------------------------------------------------------------- -->
         </div>
 
     </section>
