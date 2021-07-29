@@ -103,9 +103,6 @@ form {
 
 /* Page Question Secion -------------------------- */
 
-.question-section {
-    
-}
 
 .Topic h1 {
 color: rgba(13, 98, 94, 0.685);
@@ -132,6 +129,7 @@ margin: 30px;
 .Q-heading small {
     color: green;
 }
+
 
 /* Replies Page Css ---------------------------------------  */
 

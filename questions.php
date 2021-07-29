@@ -1,6 +1,10 @@
 <?php 
 
 session_start();
+require 'components/__dbconnect.php';
+if (isset($_GET['cate_id'])){
+    $category_id = $_GET['cate_id'];
+}
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
   // echo "false";
@@ -10,6 +14,8 @@ else{
   // echo "true";
     $loggedin = true;
 }
+
+
 ?>
 
 
@@ -47,9 +53,23 @@ else{
     <!-- section Question ----------------- -->
     <section class="question-section">
         <div class="container">
-            <div class="Topic">
-                <h1>Andriod Securitry System</h1>
-            </div>
+
+
+            <?php 
+
+                    $sql = "SELECT * FROM `categories` Where `cate_id` = '$category_id'";
+                    $result = mysqli_query($conn , $sql);
+
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo '
+                            <div class="Topic">
+                            <h1>'. $row['title'] .'</h1>
+                            </div>
+                        ';
+                    }
+
+
+                ?>
 
             <!-- form ----------------------- -->
             <?php
@@ -57,10 +77,10 @@ else{
                     echo '
                     
                     <div class="forms">
-                <form>
+                <form action="'.$_SERVER['REQUEST_URI'].'" method="POST">
                     <div class="mb-3">
                         <label for="question" class="form-label">Ask a Question related to the Topic</label>
-                        <textarea name="reply" id="reply" class="form-control"></textarea>
+                        <textarea name="question" id="question" class="form-control"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -81,112 +101,53 @@ else{
                     <br>
                     ';
                 }
+
+                //  insert Question in database  --------------
+
+                if (isset($_POST['question'])){
+                    $form_question = $_POST['question'];
+                    $author_email = $_SESSION['userEmail'];
+                    if ($form_question == null){
+                        echo '<p style="color: red">Empty on Invalid Insertion</p><br><br>';
+                    }else {
+                        $sql = "INSERT INTO `questions` (`cate_id`, `question`, `author`, `time`) VALUES ('$category_id', '$form_question', '$author_email', current_timestamp())";
+                    $result = mysqli_query($conn , $sql);
+                    }
+                    
+                }
             ?>
-            
-
             <!-- Questions List -->
-
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-
-            <!-- -------------------------------------------  -->
-
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-            <div class="Q-heading">
-                <h5>How i can Secure My Andriod Phone</h5>
-                <small>Asked By: Ahsan</small>
-                <a href="replies.php">Reply</a>
-                <hr>
-            </div>
-
-            <!-- ---------------------------------------------------- -->
+            <!-- fetching Questions list form Database ---------- -->
+            <?php
+            // connection with database 
+                $sql = "SELECT * FROM `questions` Where `cate_id` = $category_id";
+                $result = mysqli_query($conn , $sql);
+                $numOfrows = mysqli_num_rows($result);
+                if ($numOfrows > 0){
+                    while ($rows = mysqli_fetch_assoc($result)) {
+                    echo '
+                    <div class="Q-heading">
+                        <h5>'.$rows['question'].'</h5>
+                        <small>Asked By: '.$rows['author'].'</small>
+                        <a href="replies.php">Reply</a>
+                        <hr>
+                    </div>
+                    ';
+                    // extra spacing if there is only one Question 
+                    if ($numOfrows < 2){
+                        echo '<br><br><br><br>';
+                    }
+                    }
+                }else{
+                    echo '
+                    <div style="margin-bottom: 300px;">
+                        <h1 style="color: red">Empty!</h1>
+                        <h5 style="color: black">Be the First to Post a Question in this Category</h5>
+                    </div>
+                    ';
+                }
+                
+            ?>
 
         </div>
 
