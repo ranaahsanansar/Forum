@@ -1,6 +1,6 @@
 <?php 
 
-// session_start();
+session_start();
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
   // echo "false";
@@ -56,15 +56,39 @@ else{
 
             <!-- ------------Form -------------  -->
 
-            <div class="forms">
-                <form>
-                    <div class="mb-3">
-                        <label for="reply" class="form-label">Reply To This Question</label>
-                        <textarea name="reply" id="reply" class="form-control" ></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+            <?php
+                if ($loggedin == true){
+                    echo '
+
+                    <div class="forms">
+                    <form>
+                        <div class="mb-3">
+                            <label for="reply" class="form-label">Reply To This Question</label>
+                            <textarea name="reply" id="reply" class="form-control" ></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                    
+                    ';
+                }else{
+                    echo '
+                    <h5 >You Need to Login</h5>
+                    <a href="singuppage.php" style="float: right; margin-left: 5px;" >
+                        <h6 class="card-btn">Singup</h6>
+                    </a>
+                    <a href="loginPage.php" " >
+                        <h6 class="card-btn">Login</h6>
+                    </a>
+                    
+                    <br>
+                    <br>
+                    ';
+                }
+            ?>
+
+
+           
 
             <!-- -----replies -------------- -->
 

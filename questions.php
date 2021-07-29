@@ -69,14 +69,15 @@ else{
                     ';
                 }else{
                     echo '
-                    <h5>You Need to Login</h5>
+                    <h5 >You Need to Login</h5>
                     <a href="singuppage.php" style="float: right; margin-left: 5px;" >
                         <h6 class="card-btn">Singup</h6>
                     </a>
-                    <a href="loginPage.php" style="float: right;" >
+                    <a href="loginPage.php" " >
                         <h6 class="card-btn">Login</h6>
                     </a>
                     
+                    <br>
                     <br>
                     ';
                 }
