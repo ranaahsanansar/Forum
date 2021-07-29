@@ -8,7 +8,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
 }
 else{
     $loggedin = true;
-    $userName = $_SESSION['userName'];
+    $userName = strtoupper($_SESSION['userName']) ;
 }
 
 ?>
@@ -51,7 +51,7 @@ else{
             <?php
                 if ($loggedin != true){
                     echo '
-                    <a href="#" class="header-btn">
+                    <a href="loginPage.php" class="header-btn">
                         <h4>Login</h4>
                     </a>
                     <a href="singuppage.php" class="header-btn">

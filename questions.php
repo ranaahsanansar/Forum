@@ -1,3 +1,18 @@
+<?php 
+
+session_start();
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
+  // echo "false";
+    $loggedin = false;
+}
+else{
+  // echo "true";
+    $loggedin = true;
+}
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -37,8 +52,11 @@
             </div>
 
             <!-- form ----------------------- -->
-
-            <div class="forms">
+            <?php
+                if ($loggedin == true){
+                    echo '
+                    
+                    <div class="forms">
                 <form>
                     <div class="mb-3">
                         <label for="question" class="form-label">Ask a Question related to the Topic</label>
@@ -47,6 +65,23 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
+
+                    ';
+                }else{
+                    echo '
+                    <h5>You Need to Login</h5>
+                    <a href="singuppage.php" style="float: right; margin-left: 5px;" >
+                        <h6 class="card-btn">Singup</h6>
+                    </a>
+                    <a href="loginPage.php" style="float: right;" >
+                        <h6 class="card-btn">Login</h6>
+                    </a>
+                    
+                    <br>
+                    ';
+                }
+            ?>
+            
 
             <!-- Questions List -->
 

@@ -1,16 +1,15 @@
 <?php 
 
-// is there is any error in then This Page show that error 
-
-if (isset($_GET['error'])){
-    $messge = true;
+session_start();
+// if session is already on then Go to index page 
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
+    $loggedin = false;
 }
 else{
-    $messge = false;
+    header('location: index.php');
 }
 
 ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -40,21 +39,26 @@ else{
     <!-- header of the web page ---------------------- -->
     <header>
         <?php
-            include 'components/navbar.php';
-        ?>
-    <div class="hero-text-box">
-        <h3>
-            <?php
-            if ($messge == true){
-                $messge_text = $_GET['error'];
-                echo  '<h3 style="color: red;" >'.$messge_text.'</h3>'  ;
-            }
-            ?>
-        </h3>
+      require 'components/navbar.php';
+    ?>
+        <div class="hero-text-box">
+            <!-- singup form to singup  -->
+            <form action="login.php" method="POST">
+                <!-- email input  -->
+                <div class="mb-3">
+                <h6 style="color:antiquewhite" >Enter Email</h6>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <!-- password Input  -->
+                <div class="mb-3">
+                    <h6 style="color:antiquewhite" >Enter Password</h6>
+                    <input type="password" class="form-control" id="password" name="password" >
+                </div>
 
-        <a href="index.php" class="header-btn"><h4>Go Back</h4></a>
-    </div>
-        
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </header>
     <!-- Optional JavaScript; choose one of the two! -->
 

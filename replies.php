@@ -1,3 +1,18 @@
+<?php 
+
+// session_start();
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
+  // echo "false";
+    $loggedin = false;
+}
+else{
+  // echo "true";
+    $loggedin = true;
+}
+?>
+
+
 <!doctype html>
 <html lang="en">
 

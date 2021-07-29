@@ -6,6 +6,7 @@ session_unset();
 session_destroy();
 // redirection on index Page 
 
-header('location: index.php');
+// header('location: index.php');
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
 
