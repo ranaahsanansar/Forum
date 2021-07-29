@@ -9,6 +9,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
 else{
   // echo "true";
     $loggedin = true;
+    $userName = $_SESSION['userName'];
 }
 ?>
 
@@ -48,8 +49,17 @@ else{
           ';
         }
         ?>
-        
       </ul>
     </div>
+
+    <!-- if user is Logedin then show his name on navbar  -->
+        <?php
+          if ($loggedin == true){
+              echo '
+              <h4>'. $userName .'</h4>
+              ';
+          }
+        ?>
+    
   </div>
 </nav>
