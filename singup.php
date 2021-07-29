@@ -18,14 +18,15 @@ $result = mysqli_query($conn , $sql);
 // Total Number of rows with Same Email 
 $numOfRows = mysqli_num_rows($result);
 // if Number of row is equal to one then go back 
-if ($numOfRows == 1){
-    $_GET['message']= 'User is ALready Exits';
+if ($numOfRows == 1 || $numOfRows > 1){
+    // if User with same Email Addres exit then it Redirext to Error page and Exits the Script 
     header("location: error.php?error=Email is All Ready Exits");
     exit();
 }else{
     $exits = true;
 }
-if ($exits = true){
+// if user is not exist then add this user in database 
+if (!$exits == false){
     $sql = "INSERT INTO `users` (`sr.`, `name`, `email`, `password`, `created_date`) VALUES (NULL, '$name', '$email', '$password_u', current_timestamp())";
 $result = mysqli_query($conn , $sql);
 

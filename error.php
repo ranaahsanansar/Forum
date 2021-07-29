@@ -1,5 +1,7 @@
 <?php 
 
+// is there is any error in then This Page show that error 
+
 if (isset($_GET)){
     $messge = true;
 }
@@ -8,6 +10,7 @@ else{
 }
 
 ?>
+
 <!doctype html>
 <html lang="en">
 
