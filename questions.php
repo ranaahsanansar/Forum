@@ -142,14 +142,15 @@ else{
                         <a href="replies.php?ques_id='. $rows['ques_id'] .'">Reply</a>
                     ';
                     // if session email and Fetching Email is same then show Delete button 
-                    if ($rows['author'] == $_SESSION['userEmail']){
-                        echo '
-                        <a href="delete_ques.php?delete_q='. $rows['ques_id'] .'&cate_id='. $category_id.'">Delete</a>
-                    </div>
-                        ';
-                    }
-                    else {
-                        echo '</div>';
+                    if (isset($_SESSION['userEmail'])){
+                        if ($rows['author'] == $_SESSION['userEmail']){
+                            echo '
+                            <a href="delete_ques.php?delete_q='. $rows['ques_id'] .'&cate_id='. $category_id.'">Delete</a>
+                        </div>
+                            ';
+                        }else {
+                            echo '</div>';
+                        }
                     }
                     echo '<hr>'; 
                     // extra spacing if there is only one Question 

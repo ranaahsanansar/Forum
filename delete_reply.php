@@ -1,15 +1,16 @@
 <?php
+
 unset($_POST);
 session_start();
 require 'components/__dbconnect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
-    $question_id = $_GET['delete_q'];
-    $category_id = $_GET['cate_id'];
+    $reply_id = $_GET['delete_r'];
+    $ques_id = $_GET['ques_id'];
 
     // fetching the question with same question Number to Authenticate that user is Same
     
-    $sql = "SELECT * FROM `questions` WHERE `ques_id` = $question_id ";
+    $sql = "SELECT * FROM `replies` WHERE `reply_id` = $reply_id ";
     $result = mysqli_query($conn , $sql);
     $numOfRows = mysqli_num_rows($result);
     if ($numOfRows == 1)
@@ -19,10 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
      
     // cehck if User id is same with session_Id then Delete OtherWise no 
     if ($author_email == $_SESSION['userEmail']){
-        $sql = "DELETE FROM `questions` WHERE `ques_id` = $question_id";
+        $sql = "DELETE FROM `replies` WHERE `reply_id` = $reply_id";
         $result = mysqli_query($conn , $sql);
         // reditecting to questions page  
-        header('location: questions.php?cate_id='. $category_id. '');
+        header('location: replies.php?ques_id='. $ques_id. '');
         exit();
 
     }
@@ -32,4 +33,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     }
 }
 
+echo $reply_id . $ques_id;
 ?>

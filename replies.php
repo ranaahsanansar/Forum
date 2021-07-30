@@ -135,12 +135,16 @@ else{
                 $numOfrows = mysqli_num_rows($result);
                 if ($numOfrows > 0){
                     while ($rows = mysqli_fetch_assoc($result)) {
+                        $reply_id = $rows['reply_id'];
                     echo '
                     <div class="card reply-card">
                     <div class="card-body">
-                        <strong style="font-size: small;">User ID:</strong> '. $rows['author'].'
-                        <p style="font-size: 15px; ">'. $rows['reply'] .'</p>
-                        <p style=" float: right; ">Time: ' . $rows['time'] .'</p>
+                        <div class="Q-heading">
+                            <p style="font-size: 15px; ">'. $rows['reply'] .' <a href="delete_reply.php?delete_r='.$reply_id.'&ques_id='.$question_id.'">Delete</a> </p>
+                            <strong style="font-size: small;">User ID:</strong> '. $rows['author'].'
+                            <p style=" float: right; ">Time: ' . $rows['time'] .'</p>
+                        </div>
+                        
                     </div>
                 </div>
                     ';
