@@ -1,5 +1,5 @@
 <?php 
-
+// header("Refresh: 1;");
 session_start();
 require 'components/__dbconnect.php';
 if (isset($_GET['cate_id'])){
@@ -31,6 +31,7 @@ else{
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -80,12 +81,11 @@ else{
             <?php
                 if ($loggedin == true){
                     echo '
-                    
                     <div class="forms">
-                <form action="'.$_SERVER['REQUEST_URI'].'" method="POST">
+                <form action="'.$_SERVER['REQUEST_URI'].'" method="POST" id="FORM">
                     <div class="mb-3">
                         <label for="question" class="form-label">Ask a Question related to the Topic</label>
-                        <textarea name="question" id="question" class="form-control"></textarea>
+                        <textarea name="question" id="question" class="form-control" autocomplete="off" value=" " ></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -117,10 +117,11 @@ else{
                     }else {
                         $sql = "INSERT INTO `questions` (`cate_id`, `question`, `author`, `time`) VALUES ('$category_id', '$form_question', '$author_email', current_timestamp())";
                     $result = mysqli_query($conn , $sql);
+                    unset($_POST);
                     }
                     
                 }
-            ?>
+            ?> 
             <!-- Questions List -->
             <!-- fetching Questions list form Database ---------- -->
             <?php
@@ -137,10 +138,20 @@ else{
                     <div class="Q-heading">
                         <h5>'.$rows['question'].'</h5>
                         <small>Asked By: '.$rows['author'].'</small>
+                        <br>
                         <a href="replies.php?ques_id='. $rows['ques_id'] .'">Reply</a>
-                        <hr>
-                    </div>
                     ';
+                    // if session email and Fetching Email is same then show Delete button 
+                    if ($rows['author'] == $_SESSION['userEmail']){
+                        echo '
+                        <a href="delete_ques.php?delete_q='. $rows['ques_id'] .'&cate_id='. $category_id.'">Delete</a>
+                    </div>
+                        ';
+                    }
+                    else {
+                        echo '</div>';
+                    }
+                    echo '<hr>'; 
                     // extra spacing if there is only one Question 
                     if ($numOfrows < 2){
                         echo '<br><br><br><br>';
@@ -171,6 +182,9 @@ else{
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        // reset the values of form 
+        document.getElementById("FORM").reset();
+
     </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
@@ -178,6 +192,10 @@ else{
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
+
+
+
+    
 </body>
 
 </html>

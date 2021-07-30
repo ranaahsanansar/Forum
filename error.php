@@ -1,6 +1,6 @@
 <?php 
 
-// is there is any error in then This Page show that error 
+// is there is any error then This Page show that error 
 
 if (isset($_GET['error'])){
     $messge = true;
@@ -51,8 +51,8 @@ else{
             }
             ?>
         </h3>
-
-        <a href="index.php" class="header-btn"><h4>Go Back</h4></a>
+        <button type="button" class="header-btn" onclick="javascript:history.go(-1)">Back</button>
+        <!-- <a href="index.php" class="header-btn"><h4>Go Back</h4></a> -->
     </div>
         
     </header>

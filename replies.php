@@ -124,7 +124,7 @@ else{
                     
                 }
                 
-            ?>
+            ?> 
             <!-- -----replies -------------- -->
                 <!-- fetching replies from database  -->
 

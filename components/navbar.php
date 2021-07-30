@@ -9,13 +9,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
 else{
   // echo "true";
     $loggedin = true;
-    $userName = $_SESSION['userName'];
 }
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark custom-color">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">ASN Discussion</a>
+    <a class="navbar-brand" href="#">ASN</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -55,8 +54,9 @@ else{
     <!-- if user is Logedin then show his name on navbar  -->
         <?php
           if ($loggedin == true){
+              $userName = strtoupper($_SESSION['userName']) ;
               echo '
-              <h4>'. $userName .'</h4>
+              <h4 style="color: rgb(54, 252, 5);">'. $userName .'</h4>
               ';
           }
         ?>

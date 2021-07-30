@@ -8,7 +8,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
 }
 else{
     $loggedin = true;
-    $userName = strtoupper($_SESSION['userName']) ;
 }
 
 ?>
@@ -59,7 +58,8 @@ else{
                     </a>
                     ';
                 }else{
-                    echo '<h3>Welcome '.$userName .' ! </h3>'   ;
+                    $userName = strtoupper($_SESSION['userName']);
+                    echo '<h3>Welcome <div style="color: rgb(54, 252, 5); display: inline-block;">'.$userName .'</div></h3>'   ;
                 }
             ?>
 
@@ -107,7 +107,7 @@ else{
                 <!-- ----------------------------------------------------  -->
 
             </div>
-
+ 
         </div>
     </section>
 
