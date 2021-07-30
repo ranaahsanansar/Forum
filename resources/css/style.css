@@ -150,29 +150,46 @@ color: rgba(13, 98, 94, 0.685);
 
 /* --------------Footer Part ----------------------------  */
 
+
 footer {
-    background-color: black;
-    /* position: fixed; */
-    bottom: 0;
-    width: 100%;
+    background-color:  #3e3e3e ;
+    padding: 50px;
 }
 .footer-nav {
-    /* list-style: none; */
-    display: inline-block;
+    list-style: none ;
+    float: left;
 }
-.footer-nav a {
+
+.footer-nav li
+{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child
+{
+    margin-right: 0;
+}
+
+.footer-nav li a:link ,
+.footer-nav li a:visited
+{
     text-decoration: none;
-    display: inline-block;
-    color: antiquewhite;
+    border: 0;
+    color: #888;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
 }
-.copyrights{
-    color: antiquewhite;
+
+.footer-nav li a:active ,
+.footer-nav li a:hover  {
+    color: #e6e6e6 ;
+}
+
+footer p {
+    color: #888 ;
     text-align: center;
+    font-size: 90%;
+    margin-top: 30px;
+    bottom: 0;
 }
-footer h6 {
-    padding-top: 10px;
-    color: antiquewhite;
-}
-
-/* Singup Page css -------------------------------  */
-
