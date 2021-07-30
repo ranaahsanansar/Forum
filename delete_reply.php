@@ -28,10 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 
     }
     else{
-        header("location: error.php?error=Author Different! Sorry you can not delete this!");
+        header("location: error.php?error=Authentication Error! Sorry you can not delete this!");
         exit();
     }
 }
 
-echo $reply_id . $ques_id;
 ?>

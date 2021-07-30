@@ -133,13 +133,18 @@ margin: 30px;
 
 /* Replies Page Css ---------------------------------------  */
 
-.Question {
-    margin-top: 30px;
+/* .Question {
+    
 color: rgba(13, 98, 94, 0.685);
-}
+} */
 
 .reply-card  {
     margin-bottom: 5px;
+}
+
+.Question_replyPage h2 {
+    margin-top: 30px;
+    color: black;
 }
 
 

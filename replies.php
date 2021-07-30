@@ -64,8 +64,8 @@ else{
             if ($numOfrows == 1 ){
                 while ($rows = mysqli_fetch_assoc($result)) {
                 echo '
-                <div class="Question">
-                    <h5>'. $rows['question'] .' </h5>
+                <div class="Question_replyPage">
+                    <h2>'. $rows['question'] .' </h2>
                     <small>Asked By:'. $rows['author'].'</small>
                 <hr>
                 </div>
@@ -87,7 +87,7 @@ else{
                     <form action="'.$_SERVER['REQUEST_URI'].'" method="POST">
                         <div class="mb-3">
                             <label for="reply" class="form-label">Reply To This Question</label>
-                            <textarea name="reply" id="reply" class="form-control" ></textarea>
+                            <textarea name="reply" id="reply" class="form-control" value=" " ></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -140,14 +140,21 @@ else{
                     <div class="card reply-card">
                     <div class="card-body">
                         <div class="Q-heading">
-                            <p style="font-size: 15px; ">'. $rows['reply'] .' <a href="delete_reply.php?delete_r='.$reply_id.'&ques_id='.$question_id.'">Delete</a> </p>
+                            <p style="font-size: 15px; ">'. $rows['reply'] .' ';
+                            if ($rows['author'] == $_SESSION['userEmail']){
+                                echo '
+                                <a href="delete_reply.php?delete_r='.$reply_id.'&ques_id='.$question_id.'">Delete</a> </p>
+                                ';
+                            }
+                            echo '
+                             </p>
                             <strong style="font-size: small;">User ID:</strong> '. $rows['author'].'
                             <p style=" float: right; ">Time: ' . $rows['time'] .'</p>
                         </div>
                         
                     </div>
                 </div>
-                    ';
+                            ';
                     // extra spacing if there is only one Question 
                     if ($numOfrows < 2){
                         echo '<br><br><br><br>';
