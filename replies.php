@@ -109,10 +109,10 @@ else{
                     ';
                 }
                 // inserting reply in Database 
-                // INSERT INTO `replies` (`reply_id`, `ques_id`, `reply`, `author`, `time`) VALUES (NULL, '103', 'this is good.', 'ahsan', current_timestamp())
                 if (isset($_POST['reply'])){
                     $reply = $_POST['reply'];
                     $author_email_reply = $_SESSION['userEmail'];
+                    $reply = str_replace("<", "&lt;" , $reply ); // Secure from XSS Attacks 
                     // checking empty Reply 
                     if ($reply != null){
                         $sql = "INSERT INTO `replies` (`ques_id`, `reply`, `author`, `time`) VALUES ('$question_id', '$reply', '$author_email_reply', current_timestamp())";
@@ -129,7 +129,6 @@ else{
                 <!-- fetching replies from database  -->
 
                 <?php
-            // connection with database 
                 $sql = "SELECT * FROM `replies` Where `ques_id` = $question_id ORDER BY reply_id DESC";
                 $result = mysqli_query($conn , $sql);
                 $numOfrows = mysqli_num_rows($result);
@@ -140,12 +139,12 @@ else{
                     <div class="card reply-card">
                     <div class="card-body">
                         <div class="Q-heading">
-                            <p style="font-size: 15px; ">'. $rows['reply'] .' ';
+                            <p style="font-size: 15px; "><strong>'. $rows['reply'] .'</strong> ';
                             if ($rows['author'] == $_SESSION['userEmail']){
                                 echo '
                                 <a href="delete_reply.php?delete_r='.$reply_id.'&ques_id='.$question_id.'">Delete</a> </p>
                                 ';
-                            }
+                            } 
                             echo '
                              </p>
                             <strong style="font-size: small;">User ID:</strong> '. $rows['author'].'

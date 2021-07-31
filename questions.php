@@ -112,6 +112,7 @@ else{
                 if (isset($_POST['question'])){
                     $form_question = $_POST['question'];
                     $author_email = $_SESSION['userEmail'];
+                    $form_question = str_replace("<", "&lt;" , $form_question ); // Secure from XSS Attacks 
                     if ($form_question == null){
                         echo '<p style="color: red">Empty on Invalid Insertion</p><br><br>';
                     }else {
@@ -140,7 +141,7 @@ else{
                         <small>Asked By: '.$rows['author'].'</small>
                         <br>
                         <a href="replies.php?ques_id='. $rows['ques_id'] .'">Reply</a>
-                    ';
+                    '; 
                     // if session email and Fetching Email is same then show Delete button 
                     if (isset($_SESSION['userEmail'])){
                         if ($rows['author'] == $_SESSION['userEmail']){

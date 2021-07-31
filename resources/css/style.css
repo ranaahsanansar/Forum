@@ -24,7 +24,9 @@
 /*--------------------------------------- nav bar ------------------------------- */
 
 .custom-color {
+    /* background-color: rgba(9, 80, 121, 0.685); */
     background-color: rgba(9, 80, 121, 0.685);
+
 }
 
 /* ----------------------------- header setting and styling -------------------------------- */
@@ -152,14 +154,16 @@ color: rgba(13, 98, 94, 0.685);
 
 
 footer {
-    background-color:  #3e3e3e ;
-    padding: 50px;
-}
+    background-color:  rgba(9, 80, 121, 0.685) ;
+    /* padding: 50px; */
+}/*
 .footer-nav {
     list-style: none ;
     float: left;
-}
+} */
 
+
+/*
 .footer-nav li
 {
     display: inline-block;
@@ -192,4 +196,4 @@ footer p {
     font-size: 90%;
     margin-top: 30px;
     bottom: 0;
-}
+} */
