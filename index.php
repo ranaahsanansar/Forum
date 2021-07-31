@@ -43,8 +43,8 @@ else{
       require 'components/navbar.php';
       ?>
         <div class="hero-text-box">
-            <h2>Website Security Discussion</h2>
-            <h3>How to secure Your Website</h3>
+            <h4>Cyber Security Discussion Forum</h4>
+            <h4>Project of RANA AHSAN ANSAR</h4>
             <br>
             <!-- if session in Login then disply the name of User  -->
             <?php
