@@ -5,13 +5,7 @@ $password_u = $_POST['password'];
 // If email  already exits then this Exits equal to True 
 $exits = false;
 // connection with  Database 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "asndiscuss";
-
-$conn = mysqli_connect($servername , $username , $password , $database);
-
+require 'components/__dbconnect.php';
 $sql = "SELECT * FROM `users` WHERE `email` = '$email' ";
 $result = mysqli_query($conn , $sql);
 // Total Number of rows with Same Email 

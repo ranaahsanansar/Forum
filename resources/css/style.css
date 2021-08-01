@@ -45,6 +45,8 @@ header {
     top: 50%; 
     transform: translate(-50%,-50%);
 }
+
+
 /* glowing Text */
 .glow {
     animation: glow 1s ease-in-out infinite alternate;

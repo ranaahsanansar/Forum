@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "asndiscuss";
+$database = "asndisc";
 $flag = false ;
 // connecting with Mysql 
 $conn = mysqli_connect($servername , $username , $password);
@@ -29,12 +29,12 @@ if ($flag){
 
     
     // Create Questionn Table ---------------------------------------------------
-    $sql = "CREATE TABLE `asn`.`questions` ( `cate_id` INT(100) NOT NULL ,  `ques_id` INT(100) NOT NULL AUTO_INCREMENT ,  `question` TEXT NOT NULL ,  `author` VARCHAR(255) NOT NULL ,  `time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,    PRIMARY KEY  (`ques_id`)) ENGINE = InnoDB;";
+    $sql = "CREATE TABLE `asn`.`questions` ( `cate_id` INT(100) NOT NULL ,  `ques_id` INT(100) NOT NULL AUTO_INCREMENT ,  `question` TEXT NOT NULL ,  `author` VARCHAR(255) NOT NULL ,  `time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,    PRIMARY KEY  (`ques_id`)) ENGINE = InnoDB";
     $result = mysqli_query($conn , $sql);
 
     
     // Create Replies Table ------------------------------------------------------
-    $sql = "CREATE TABLE `asn`.`replies` ( `reply_id` INT(100) NOT NULL AUTO_INCREMENT ,  `ques_id` INT(100) NOT NULL ,  `reply` TEXT NOT NULL ,  `author` VARCHAR(255) NOT NULL ,  `time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,    PRIMARY KEY  (`reply_id`)) ENGINE = InnoDB;";
+    $sql = "CREATE TABLE `asn`.`replies` ( `reply_id` INT(100) NOT NULL AUTO_INCREMENT ,  `ques_id` INT(100) NOT NULL ,  `reply` TEXT NOT NULL ,  `author` VARCHAR(255) NOT NULL ,  `time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,    PRIMARY KEY  (`reply_id`)) ENGINE = InnoDB";
     $result = mysqli_query($conn , $sql);
 
     

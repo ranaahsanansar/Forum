@@ -25,6 +25,7 @@ else{
 
     <!-- custom csss styling file  -->
     <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/media.css">
 
     <!-- fonts from Google  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
