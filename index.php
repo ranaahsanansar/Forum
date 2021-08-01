@@ -44,7 +44,8 @@ else{
       ?>
         <div class="hero-text-box">
             <h4>Cyber Security Discussion Forum</h4>
-            <h4>Project of RANA AHSAN ANSAR</h4>
+            <br>
+            <h4 style="text-decoration: underline;" class="glow">Project of RANA AHSAN ANSAR</h4>
             <br>
             <!-- if session in Login then disply the name of User  -->
             <?php
@@ -81,16 +82,14 @@ else{
                 <!-- INSERT INTO `categories` (`cate_id`, `name`, `details`) VALUES (NULL, 'Android Security', 'How to Secure Your Andriod Phone From Hackers.'); -->
                 <?php 
                     require 'components/__dbconnect.php';
-
                     $sql = 'SELECT * FROM `categories`';
                     $result = mysqli_query($conn , $sql);
-
                     while($row = mysqli_fetch_assoc($result)){
                         echo '
                             <div class="card-padding col-md-4 my-2">
                             <div class="card card-custom" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title">'. substr($row['title'], 0 , 15) .'</h5>
+                            <h5 class="card-title">'. substr($row['title'], 0 , 15) .'...</h5>
                             <h6 class="card-subtitle mb-2 text-muted">ASN Discussion Forum</h6>
                             <p class="card-text">'. substr($row['details'] , 0 , 15) .'.......</p>
                             <a href="questions.php?cate_id='.$row['cate_id'].'" class="card-btn">View</a>
@@ -101,13 +100,12 @@ else{
                         ';
                     }
 
-
                 ?>
 
                 <!-- ----------------------------------------------------  -->
 
             </div>
- 
+
         </div>
     </section>
 

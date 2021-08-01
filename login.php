@@ -34,9 +34,10 @@ if ($numOfRows == 1 || $numOfRows > 1){
         }
 }else{
     header("location: error.php?error=Your Email is Wrong");
-    die();
+    die(); 
 }
 
 header( 'location: index.php' );
+
 
 ?>
