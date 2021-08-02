@@ -3,8 +3,8 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "asndisc";
-$flag = false ;
+$database = "asndiscuss";
+$flag = false ; 
 // connecting with Mysql 
 $conn = mysqli_connect($servername , $username , $password);
 
@@ -20,7 +20,8 @@ if (mysqli_num_rows($result) == 1 ){
     $result = mysqli_query($conn , $sql);
     $flag = true;
 }
-if ($flag){ 
+if ($flag == true)
+{ 
     $conn = mysqli_connect($servername , $username , $password , $database);
 
     // Create categories table -------------------------------------------------

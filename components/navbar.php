@@ -7,8 +7,8 @@ else{
     $loggedin = true;
 }
 ?>
-
-<nav class="navbar navbar-expand-lg navbar-dark custom-color">
+ 
+<nav class="navbar navbar-expand-lg navbar-dark custom-nav">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">ASN</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -56,7 +56,7 @@ else{
           if ($loggedin == true){
               $userName = strtoupper($_SESSION['userName']) ;
               echo '
-              <h4 style="color: rgb(54, 252, 5);">'. $userName .'</h4>
+              <h4 style="color: rgb(54, 252, 5);" class="nav_name"> '. $userName .'</h4>
               ';
           }
         ?>

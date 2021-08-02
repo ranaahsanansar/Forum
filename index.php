@@ -81,13 +81,13 @@ else{
                 <!-- ferching Dynamic Topics forms DataBase  -->
 
                 <!-- INSERT INTO `categories` (`cate_id`, `name`, `details`) VALUES (NULL, 'Android Security', 'How to Secure Your Andriod Phone From Hackers.'); -->
-                <?php 
+                <?php  
                     require 'components/__dbconnect.php';
                     $sql = 'SELECT * FROM `categories`';
                     $result = mysqli_query($conn , $sql);
                     while($row = mysqli_fetch_assoc($result)){
                         echo '
-                            <div class="card-padding col-md-4 my-2">
+                            <div class="col-md-4 my-2 cards_index">
                             <div class="card card-custom" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">'. substr($row['title'], 0 , 15) .'...</h5>

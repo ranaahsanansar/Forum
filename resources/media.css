@@ -1,21 +1,64 @@
 @media only screen and (max-width: 1200px) {
     .hero-text-box {
-    width: 50%;
+    width: 50%;   
+    }
+
+    .loginform, .singupforum {
+    width: 80%;    
+    }
+
+    .custom-nav {
+        background-color: rgb(9, 80, 121);
+        border-bottom: 2px solid rgba(238, 6, 207, 0.685);
+        z-index: 100;
+    }
+    .cards_index {
+        padding-left: 125px;
+    }
+
+    .nav_name {
+        display: none;
+    }
     
 }
-
-}
-
 
 @media only screen and (max-width: 767px) {
     .hero-text-box {
         width: 50%;
     }
+    .loginform, .singupforum {
+        width: 80%;    
+        }
+        .custom-nav {
+            background-color: rgb(9, 80, 121);
+            border-bottom: 2px solid rgba(238, 6, 207, 0.685);
+            z-index: 100;
+        }
+        .cards_index {
+            padding-left: 125px;
+        }
+        .nav_name {
+            display: none;
+        }
 }
 
 @media only screen and (max-width: 1023px) {
     .hero-text-box {
         width: 50%;
     }
+    .loginform, .singupforum {
+        width: 80%;    
+        }
+        .custom-nav {
+            background-color: rgb(9, 80, 121);
+            border-bottom: 2px solid rgba(238, 6, 207, 0.685);
+            z-index: 100;
+        }
+        .cards_index {
+            padding-left: 125px;
+        }
+        .nav_name {
+            display: none;
+        }
 }
 

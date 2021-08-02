@@ -24,7 +24,7 @@ else{
 
     <!-- custom csss styling file  -->
     <link rel="stylesheet" href="resources/css/style.css">
-
+<link rel="stylesheet" href="resources/media.css">
     <!-- fonts from Google  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@ else{
     ?>
         <div class="hero-text-box">
             <!-- singup form to singup  -->
-            <form action="singup.php" method="POST">
+            <form action="singup.php" method="POST" class="singupforum">
                 <!-- name input  -->
                 <div class="mb-3">
                 <h6 style="color:antiquewhite" >Enter Name</h6>

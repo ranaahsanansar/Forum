@@ -24,6 +24,7 @@ else{
 
     <!-- custom csss styling file  -->
     <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/media.css">
 
     <!-- fonts from Google  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,10 +41,10 @@ else{
     <header>
         <?php
       require 'components/navbar.php';
-    ?>
+    ?>  
         <div class="hero-text-box">
             <!-- singup form to singup  -->
-            <form action="login.php" method="POST">
+            <form action="login.php" method="POST" class="loginform">
                 <!-- email input  -->
                 <div class="mb-3">
                 <h6 style="color:antiquewhite" >Enter Email</h6>

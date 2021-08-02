@@ -15,7 +15,7 @@ if ($numOfRows == 1 || $numOfRows > 1){
     // if User with same Email Addres exit then it Redirext to Error page and Exits the Script 
     header("location: error.php?error=Email is All Ready Exits");
     exit();
-}else{
+}else{ 
     $exits = true;
 } 
 // if user is not exist then add this user in database 
