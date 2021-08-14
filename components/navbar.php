@@ -21,7 +21,7 @@ else{
                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="https://www.linkedin.com/in/asn-cs21/" target="_blank">About</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -29,12 +29,12 @@ else{
                         Social Links
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">LinkedIn</a></li>
-                        <li><a class="dropdown-item" href="#">GitHub</a></li>
+                        <li><a class="dropdown-item" href="https://www.linkedin.com/in/asn-cs21/" target="_blank">LinkedIn</a></li>
+                        <li><a class="dropdown-item" href="https://github.com/ranaahsanansar" target="_blank">GitHub</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">My Website</a></li>
+                        <li><a class="dropdown-item" href="https://github.com/ranaahsanansar">My Website</a></li>
                     </ul>
                 </li>
                 <!-- --------------------------------- login and Logout Button ------------------ -->
